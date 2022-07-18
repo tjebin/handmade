@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import logo from '../assets/images/handmade_logo.png'
 import { Link } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa';
-import { links } from '../utils/constants'
+import { links } from '../utils/constants';
+import CartButtons from './CartButtons';
 
 const Navbar = () => {
     return (
@@ -22,8 +23,10 @@ const Navbar = () => {
                             <Link to={url}>{text}</Link>
                         </li>
                     })}
-
                 </ul>
+                <div className="cart-btn-wrapper">
+                    <CartButtons />
+                </div>
             </div>
         </NavContainer>
     )
@@ -56,11 +59,11 @@ const NavContainer = styled.nav`
     border: transparent;
     color: var(--clr-primary-5);
     cursor: pointer;
-    svg {
-      font-size: 2rem;
-    }
   }
   .nav-links {
+    display: none;
+  }
+  .cart-btn-wrapper {
     display: none;
   }
 
@@ -90,7 +93,9 @@ const NavContainer = styled.nav`
         }
       }
     }
- 
+    .cart-btn-wrapper {
+      display: grid;
+    }
   }
 `
 export default Navbar;

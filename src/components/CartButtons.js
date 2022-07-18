@@ -2,18 +2,30 @@ import React from 'react'
 import { FaShoppingCart, FaUserMinus, FaUserPlus } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { useProductsContext } from '../context/products_context'
-import { useCartContext } from '../context/cart_context'
-import { useUserContext } from '../context/user_context'
+// import { useProductsContext } from '../context/products_context'
+// import { useCartContext } from '../context/cart_context'
+// import { useUserContext } from '../context/user_context'
 
 const CartButtons = () => {
-    return <h4>cart buttons </h4>
+    return <Wrapper>
+        <Link to="/cart" className="cart-btn">
+            Cart
+            <span className="cart-container">
+                <FaShoppingCart />
+                <span className="cart-value">2</span>
+            </span>
+        </Link>
+        <button type="button" className='auth-btn'>
+            Login <FaUserPlus />
+        </button>
+    </Wrapper >
 }
 
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+  font-size: 12px;
   width: 225px;
 
   .cart-btn {
@@ -21,18 +33,9 @@ const Wrapper = styled.div`
     font-size: 1.5rem;
     letter-spacing: var(--spacing);
     color: var(--clr-grey-1);
-    display: flex;
-
-    align-items: center;
   }
   .cart-container {
-    display: flex;
-    align-items: center;
     position: relative;
-    svg {
-      height: 1.6rem;
-      margin-left: 5px;
-    }
   }
   .cart-value {
     position: absolute;
@@ -58,9 +61,6 @@ const Wrapper = styled.div`
     cursor: pointer;
     color: var(--clr-grey-1);
     letter-spacing: var(--spacing);
-    svg {
-      margin-left: 5px;
-    }
   }
 `
 export default CartButtons
