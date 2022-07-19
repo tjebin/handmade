@@ -26,7 +26,7 @@ const Wrapper = styled.div`
   grid-template-columns: 1fr 1fr;
   align-items: center;
   font-size: 12px;
-  width: 225px;
+  /* width: 225px; */
 
   .cart-btn {
     color: var(--clr-grey-1);
