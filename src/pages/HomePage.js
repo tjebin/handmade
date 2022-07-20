@@ -1,12 +1,16 @@
 import React from 'react'
+import { Breadcrumb, FeaturedProducts, Services, Contact, Design } from '../components'
 
 const HomePage = () => {
     return (
-        <div>
-            This is a home page
-
-        </div>
+        <main>
+            <Design />
+            <FeaturedProducts />
+            <Services />
+            <Contact />
+        </main>
     )
 }
+
 
 export default HomePage

@@ -5,39 +5,32 @@ import { FaTimes } from 'react-icons/fa'
 import { links } from '../utils/constants'
 import styled from 'styled-components'
 import CartButtons from './CartButtons'
+import { useProductsContext } from '../context/products_context'
 
 
 const Sidebar = () => {
-    const [openSidebar, setOpenSidebar] = useState(true);
-    return <SidebarContainer>
-        <aside className={`${openSidebar ? 'sidebar show-sidebar' : 'show-sidebar'}`}>
-            <div className='sidebar-header'>
-                <img src={logo} className="logo" alt="Handmade_Logo" />
-                <FaTimes className="close-btn" onClick={() => setOpenSidebar(!openSidebar)}></FaTimes>
-            </div>
-        </aside>
-        {
-            openSidebar &&
-            <div className="sidebar show-sidebar ">
-                <div className='sidebar-header'>
-                    <img src={logo} className="logo" alt="Handmade_Logo" />
-                    <FaTimes className="close-btn" onClick={() => setOpenSidebar(!openSidebar)}></FaTimes>
-                </div>
-                <ul className="links">
-                    {links.map(link => {
-                        const { id, text, url } = link;
-                        return <li key={id}>
-                            <Link to={url}>{text}</Link>
-                        </li>
-                    })}
-                    <li>
-                        <Link to="/checkout">checkout</Link>
-                    </li>
-                </ul>
-                <CartButtons />
-            </div>
-        }
-    </SidebarContainer >
+  const data = useProductsContext();
+  const { openSidebar, setCloseSidebar } = data;
+  return <SidebarContainer>
+    <aside className={`${openSidebar ? 'sidebar show-sidebar' : 'sidebar'}`}>
+      <div className='sidebar-header'>
+        <img src={logo} className="logo" alt="Handmade_Logo" />
+        <FaTimes className="close-btn" onClick={() => setCloseSidebar()}></FaTimes>
+      </div>
+      <ul className="links">
+        {links.map(link => {
+          const { id, text, url } = link;
+          return <li key={id}>
+            <Link to={url}>{text}</Link>
+          </li>
+        })}
+        <li>
+          <Link to="/checkout">checkout</Link>
+        </li>
+      </ul>
+      <CartButtons />
+    </aside>
+  </SidebarContainer >
 }
 
 const SidebarContainer = styled.div`
@@ -96,10 +89,12 @@ const SidebarContainer = styled.div`
     transition: var(--transition);
     transform: translate(-100%);
     z-index: -1;
+    
   }
   .show-sidebar {
     transform: translate(0);
     z-index: 999;
+    display: visible;
   }
   @media screen and (min-width: 992px) {
     .sidebar {
