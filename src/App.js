@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Navbar, Sidebar, Footer } from './components'
-import { AboutPage, HomePage, CartPage, ProductsPage, CheckoutPage, ErrorPage } from './pages';
+import { AboutPage, HomePage, CartPage, ProductsPage, CheckoutPage, ErrorPage, SingleProductPage } from './pages';
 
 function App() {
   return <BrowserRouter>
@@ -12,6 +12,7 @@ function App() {
       <Route exact path="/" element={<HomePage />}></Route>
       <Route exact path="/cart" element={<CartPage />}></Route>
       <Route exact path="/products" element={<ProductsPage />}></Route>
+      <Route exact path="/products/:id" element={<SingleProductPage />}></Route>
       <Route exact path="/about" element={<AboutPage />}></Route>
       <Route exact path="/checkout" element={<CheckoutPage />}></Route>
       <Route path="*" element={<ErrorPage />}></Route>
