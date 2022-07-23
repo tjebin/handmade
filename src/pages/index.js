@@ -7,6 +7,7 @@ import ProductsPage from './ProductsPage';
 import SingleProductPage from './SingleProductPage';
 import CartPage from './CartPage';
 
+
 export {
     CheckoutPage,
     AboutPage,

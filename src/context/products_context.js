@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useReducer } from 'react';
 import products_reducer from '../reducers/products_reducer';
-import { SIDEBAR_OPEN, SIDEBAR_CLOSE, SET_PRODUCTS } from '../actions';
-
+import { SIDEBAR_OPEN, SIDEBAR_CLOSE, SET_PRODUCTS, GET_SINGLE_PRODUCT } from '../actions';
 
 const initialState = {
     openSidebar: false,
     products_loading: false,
     products_error: false,
-    products: []
+    products: [],
+    singleProduct: {}
 };
 
 const ProductsContext = React.createContext();
@@ -26,13 +26,17 @@ export const ProductsProvider = ({ children }) => {
     const setProducts = () => {
         dispatch({ type: SET_PRODUCTS })
     }
+    const getSingleProduct = (id) => {
+        dispatch({ type: SET_PRODUCTS })
+        dispatch({ type: GET_SINGLE_PRODUCT, payload: id })
+    }
 
     useEffect(() => {
         setOpenSidebar();
         setProducts();
     }, [])
     return (
-        <ProductsContext.Provider value={{ ...state, setOpenSidebar, setCloseSidebar }}>
+        <ProductsContext.Provider value={{ ...state, setOpenSidebar, setCloseSidebar, getSingleProduct }}>
             {children}
         </ProductsContext.Provider>
     )

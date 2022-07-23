@@ -1,36 +1,65 @@
 import React, { useEffect } from 'react'
-import { useParams, useHistory } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 import { useProductsContext } from '../context/products_context'
 import { formatPrice } from '../utils/helpers'
 import { Breadcrumb } from '../components'
 import bamboo_bowl from '../assets/images/bamboo_bowl.jpg'
-
-import {
-    Loading,
-    Error,
-    ProductImages,
-    AddToCart,
-    Stars,
-    PageHero,
-} from '../components'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-const SingleProductPage = () => {
-    return <Wrapper>
-        <Breadcrumb title="Products"></Breadcrumb>
-        <section className="product-center section-center">
-            <article >
-                <img src={bamboo_bowl} alt="bamboo_bowl" />
-            </article>
-            <article>
-                <h2>Bamboo Bowl</h2>
-                <h3 className="price">$8.00</h3>
-                <p>Wooden Bowl Made with Superior Quality wood.</p>
+import {
+  ProductImages,
+  AddToCart,
+  Stars
+} from '../components'
 
-            </article>
-        </section>
-    </Wrapper>
+
+const SingleProductPage = () => {
+  const data = useProductsContext();
+  const { getSingleProduct, singleProduct } = data;
+  const { id } = useParams();
+  const navigate = useNavigate();
+  if (!singleProduct) {
+    setTimeout(() => {
+      navigate("/", { replace: true });
+    }, 3000)
+  }
+
+  const { image, name, price, description, stock, stars, reviews, id: sku, company, images } = singleProduct;
+  useEffect(() => {
+    getSingleProduct(id);
+  }, [id]);
+  return <Wrapper>
+    <Breadcrumb title="Single Product" product="product"></Breadcrumb>
+    <section className="section page section-center">
+      <Link to="/products" className='btn'>
+        Back to products
+      </Link>
+      <div className="product-center">
+        <ProductImages images={images} />
+        <div className="content">
+          <h2>{name}</h2>
+          <Stars />
+          <h5 className='price'>{formatPrice(price)}</h5>
+          <p className="desc">{description}</p>
+          <p className="info">
+            <span>Available : </span>
+            {stock > 0 ? 'In stock' : 'Out of stock'}
+          </p>
+          <p className="info">
+            <span>SKU</span>
+          </p>
+          <p className="info">
+            <span>Brand :</span>
+            {company}
+          </p>
+          <hr />
+          {stock > 0 && <AddToCart />}
+        </div>
+      </div>
+    </section>
+  </Wrapper>
 }
 
 const Wrapper = styled.main`
@@ -38,10 +67,13 @@ const Wrapper = styled.main`
     display: grid;
     gap: 4rem;
     margin-top: 2rem;
-    img{
-        width:50%;
-        height:100%;
-    }
+    /* img {
+      width: 100%;
+      display: block;
+      border-radius: var(--radius);
+      height: 500px;
+      object-fit: cover;
+    } */
   }
   .price {
     color: var(--clr-primary-5);
@@ -63,7 +95,7 @@ const Wrapper = styled.main`
   @media (min-width: 992px) {
     .product-center {
       grid-template-columns: 1fr 1fr;
-      align-items: center;
+    
     }
     .price {
       font-size: 1.25rem;

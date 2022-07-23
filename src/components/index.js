@@ -6,6 +6,10 @@ import FeaturedProducts from './FeaturedProducts';
 import Services from './Services';
 import Contact from './Contact';
 import Design from './Design';
+import Alert from './Alert';
+import ProductImages from './ProductImages';
+import Stars from './Stars';
+import AddToCart from './AddToCart';
 
 export {
     Navbar,
@@ -15,5 +19,9 @@ export {
     FeaturedProducts,
     Services,
     Contact,
-    Design
+    Design,
+    Alert,
+    ProductImages,
+    Stars,
+    AddToCart
 }
