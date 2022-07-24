@@ -8,7 +8,7 @@ const Breadcrumb = ({ title, product }) => {
       <div className="section-center">
         <h3>
           <Link to='/'>Home</Link>/
-          {product && <Link to="/products">/</Link>}
+          {product && <Link to="/products">products/</Link>}
           {title}
         </h3>
       </div>

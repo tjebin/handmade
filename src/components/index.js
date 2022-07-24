@@ -10,6 +10,7 @@ import Alert from './Alert';
 import ProductImages from './ProductImages';
 import Stars from './Stars';
 import AddToCart from './AddToCart';
+import AmountButtons from './AmountButtons';
 
 export {
     Navbar,
@@ -23,5 +24,6 @@ export {
     Alert,
     ProductImages,
     Stars,
-    AddToCart
+    AddToCart,
+    AmountButtons
 }

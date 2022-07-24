@@ -2,10 +2,57 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { FaCheck } from 'react-icons/fa'
+import AmountButtons from './AmountButtons'
 
 
-const AddToCart = () => {
-    return <h4>addToCart </h4>
+const AddToCart = ({ product }) => {
+  const { stock, id: sku, colors } = product;
+  const [mainColor, setMainColor] = useState(colors[0]);
+  const [amount, setAmount] = useState(1);
+
+  const increase = () => {
+    setAmount((oldAmount) => {
+      let tempAmount = oldAmount + 1;
+      if (tempAmount > stock) {
+        tempAmount = stock;
+      }
+      return tempAmount;
+    });
+  }
+
+  const decrease = () => {
+    setAmount((oldAmount) => {
+      let tempAmount = oldAmount - 1;
+      if (tempAmount < 1) {
+        tempAmount = 1;
+      }
+      return tempAmount;
+    });
+  }
+
+  return <Wrapper>
+    <div className="colors">
+      <span> colors : </span>
+      <div>{
+        colors.map((color, index) => {
+          return <button
+            key={index}
+            style={{ background: color }}
+            className={`${mainColor === color ? 'color-btn active' : 'color-btn'}`}
+            onClick={() => setMainColor(color)}>
+            {mainColor === color ? <FaCheck /> : null}
+          </button>
+        })
+      }</div>
+    </div>
+    <div className="btn-container">
+      <AmountButtons decrease={decrease} increase={increase} amount={amount} />
+      <Link to="/cart" className='btn'>
+        Add To Cart
+      </Link>
+
+    </div>
+  </Wrapper>
 }
 
 const Wrapper = styled.section`
@@ -28,7 +75,7 @@ const Wrapper = styled.section`
     width: 1.5rem;
     height: 1.5rem;
     border-radius: 50%;
-    background: #222;
+    background: var(--mainColor);
     margin-right: 0.5rem;
     border: none;
     cursor: pointer;
@@ -36,10 +83,6 @@ const Wrapper = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
-    svg {
-      font-size: 0.75rem;
-      color: var(--clr-white);
-    }
   }
   .active {
     opacity: 1;
@@ -51,6 +94,17 @@ const Wrapper = styled.section`
   .btn {
     margin-top: 1rem;
     width: 140px;
+  }
+
+  .amount {
+    display: flex;
+    column-gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-weight:700;
+    cursor: pointer;
+    font-size:2rem;
+  
   }
 `
 export default AddToCart

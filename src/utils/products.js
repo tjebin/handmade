@@ -9,9 +9,9 @@ export const products = [
             "#00ff00",
             "#0000ff"
         ],
-        "company": "plnat_pot",
-        "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
-        "category": "office",
+        "company": "Homemade",
+        "description": "Handmade  ceramic plant pot to decor your house with lively plants",
+        "category": "home",
         "shipping": true,
         "images": [
             {
@@ -34,46 +34,49 @@ export const products = [
                 "filename": "image4",
                 "url": 'https://dl.airtable.com/.attachmentThumbnails/530c07c5ade5acd9934c8dd334458b86/cf91397f?ts=1658361235&userId=usrQMwWEPx18KgLcP&cs=92965b66f0d4923b'
             },
-        ]
+        ],
+        "stars": 4.9,
+        "reviews": 12,
+        "stock": 8
     },
     {
         "id": "recEHmzvupvT8ZONH",
-        "name": "albany sectional",
-        "price": 109999,
-        "image": "https://dl.airtable.com/.attachmentThumbnails/0be1af59cf889899b5c9abb1e4db38a4/d631ac52?ts=1658361235&userId=usrQMwWEPx18KgLcP&cs=c09b8dcae95524e0",
+        "name": "bamboo bowl",
+        "price": 4000,
+        "image": "/images/bamboo_bowl.jpg",
         "colors": [
             "#000",
             "#ffb900"
         ],
-        "company": "liddy",
-        "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
-        "category": "living room"
+        "company": "Homemade",
+        "description": "Made with real bamboo direct from nature; High quality bamboo and break resistant",
+        "category": "dinning"
     },
     {
         "id": "rec5NBwZ5zCD9nfF0",
-        "name": "albany table",
+        "name": "crochet blanket",
         "price": 309999,
-        "image": "https://dl.airtable.com/.attachmentThumbnails/7478483f40a2f56662a87b304bd4e104/707d397f?ts=1658361235&userId=usrQMwWEPx18KgLcP&cs=916130c0da73a816",
+        "image": "/images/crochet_blanket.jpg",
         "colors": [
             "#ffb900",
             "#0000ff"
         ],
-        "company": "liddy",
-        "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
-        "category": "kitchen"
+        "company": "homemade",
+        "description": "Crocheted blanket perfect for summer and mild winter",
+        "category": "bedroom"
     },
     {
         "id": "recd1jIVIEChmiwhe",
-        "name": "armchair",
-        "price": 12599,
-        "image": "https://dl.airtable.com/.attachmentThumbnails/530c07c5ade5acd9934c8dd334458b86/cf91397f?ts=1658361235&userId=usrQMwWEPx18KgLcP&cs=92965b66f0d4923b",
+        "name": "bedding set",
+        "price": 625599,
+        "image": "/images/bedding_set.jpg",
         "colors": [
             "#000",
             "#00ff00",
             "#0000ff"
         ],
-        "company": "marcos",
-        "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
+        "company": "Handmade",
+        "description": "Luxarious bedding set to adorn your bed with a comfy feeling. Machine washable",
         "category": "bedroom",
         "shipping": true
     },

@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { useProductsContext } from '../context/products_context'
 import { formatPrice } from '../utils/helpers'
 import { Breadcrumb } from '../components'
-import bamboo_bowl from '../assets/images/bamboo_bowl.jpg'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
@@ -13,7 +12,6 @@ import {
   AddToCart,
   Stars
 } from '../components'
-
 
 const SingleProductPage = () => {
   const data = useProductsContext();
@@ -26,7 +24,7 @@ const SingleProductPage = () => {
     }, 3000)
   }
 
-  const { image, name, price, description, stock, stars, reviews, id: sku, company, images } = singleProduct;
+  const { name, price, description, stock, stars, reviews, id: sku, company, images } = singleProduct;
   useEffect(() => {
     getSingleProduct(id);
   }, [id]);
@@ -40,7 +38,7 @@ const SingleProductPage = () => {
         <ProductImages images={images} />
         <div className="content">
           <h2>{name}</h2>
-          <Stars />
+          <Stars stars={stars} reviews={reviews} />
           <h5 className='price'>{formatPrice(price)}</h5>
           <p className="desc">{description}</p>
           <p className="info">
@@ -55,7 +53,11 @@ const SingleProductPage = () => {
             {company}
           </p>
           <hr />
-          {stock > 0 && <AddToCart />}
+          <p className="info">
+            <span>Stock :</span>
+            {stock}
+          </p>
+          {stock > 0 && <AddToCart product={singleProduct} />}
         </div>
       </div>
     </section>
