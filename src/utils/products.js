@@ -9,7 +9,7 @@ export const products = [
             "#00ff00",
             "#0000ff"
         ],
-        "company": "Homemade",
+        "company": "Handmade",
         "description": "Handmade  ceramic plant pot to decor your house with lively plants",
         "category": "home",
         "shipping": true,
@@ -48,7 +48,7 @@ export const products = [
             "#000",
             "#ffb900"
         ],
-        "company": "Homemade",
+        "company": "Handmade Pots",
         "description": "Made with real bamboo direct from nature; High quality bamboo and break resistant",
         "category": "dinning",
         "images": [
@@ -83,7 +83,7 @@ export const products = [
             "#ffb900",
             "#0000ff"
         ],
-        "company": "homemade",
+        "company": "Handmade Bed & Bath",
         "description": "Crocheted blanket perfect for summer and mild winter",
         "category": "bedroom",
         "images": [
@@ -154,7 +154,7 @@ export const products = [
         "colors": [
             "#000"
         ],
-        "company": "Handmade",
+        "company": "Handmade Hawai",
         "description": "Plant Pot",
         "category": "dining",
         "shipping": true,
