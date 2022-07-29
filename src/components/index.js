@@ -14,6 +14,9 @@ import AmountButtons from './AmountButtons';
 import Sort from './Sort';
 import ProductsList from './ProductsList';
 import Filters from './Filters';
+import CartContent from './CarContent';
+import CartTotals from './CartTotals';
+import CartItem from './CartItem';
 
 export {
     Navbar,
@@ -31,6 +34,10 @@ export {
     AmountButtons,
     Sort,
     ProductsList,
-    Filters
+    Filters,
+    CartContent,
+    CartTotals,
+    CartItem
+
 }
 

@@ -53,8 +53,8 @@ export const products = [
         "category": "dinning",
         "images": [
             {
-                "filename": "plant_pot",
-                "url": '/images/plant_pot.jpg'
+                "filename": "bamboo_bowl",
+                "url": '/images/bamboo_bowl.jpg'
             },
             {
                 "filename": "image2",
@@ -72,7 +72,8 @@ export const products = [
                 "filename": "image4",
                 "url": 'https://dl.airtable.com/.attachmentThumbnails/530c07c5ade5acd9934c8dd334458b86/cf91397f?ts=1658361235&userId=usrQMwWEPx18KgLcP&cs=92965b66f0d4923b'
             },
-        ]
+        ],
+        "stock": 6
     },
     {
         "id": "rec5NBwZ5zCD9nfF0",
@@ -88,8 +89,8 @@ export const products = [
         "category": "bedroom",
         "images": [
             {
-                "filename": "plant_pot",
-                "url": '/images/plant_pot.jpg'
+                "filename": "crochet_blanket",
+                "url": '/images/crochet_blanket.jpg'
             },
             {
                 "filename": "image2",
@@ -125,8 +126,8 @@ export const products = [
         "shipping": true,
         "images": [
             {
-                "filename": "plant_pot",
-                "url": '/images/plant_pot.jpg'
+                "filename": "bedding_set",
+                "url": '/images/bedding_set.jpg'
             },
             {
                 "filename": "image2",
@@ -144,43 +145,8 @@ export const products = [
                 "filename": "image4",
                 "url": 'https://dl.airtable.com/.attachmentThumbnails/530c07c5ade5acd9934c8dd334458b86/cf91397f?ts=1658361235&userId=usrQMwWEPx18KgLcP&cs=92965b66f0d4923b'
             },
-        ]
-    },
-    {
-        "id": "recoM2MyHJGHLVi5l",
-        "name": "plant pot",
-        "price": 4099,
-        "image": "/images/plant_pot.jpg",
-        "colors": [
-            "#000"
         ],
-        "company": "Handmade Hawai",
-        "description": "Plant Pot",
-        "category": "dining",
-        "shipping": true,
-        "featured": true,
-        "images": [
-            {
-                "filename": "plant_pot",
-                "url": '/images/plant_pot.jpg'
-            },
-            {
-                "filename": "image2",
-                "url": 'https://dl.airtable.com/.attachmentThumbnails/e8bc3791196535af65f40e36993b9e1f/438bd160?ts=1658361235&userId=usrQMwWEPx18KgLcP&cs=21e3424e40599304'
-            },
-            {
-                "filename": "image2",
-                "url": 'https://dl.airtable.com/.attachmentThumbnails/0be1af59cf889899b5c9abb1e4db38a4/d631ac52?ts=1658361235&userId=usrQMwWEPx18KgLcP&cs=c09b8dcae95524e0'
-            },
-            {
-                "filename": "image3",
-                "url": 'https://dl.airtable.com/.attachmentThumbnails/0be1af59cf889899b5c9abb1e4db38a4/d631ac52?ts=1658361235&userId=usrQMwWEPx18KgLcP&cs=c09b8dcae95524e0'
-            },
-            {
-                "filename": "image4",
-                "url": 'https://dl.airtable.com/.attachmentThumbnails/530c07c5ade5acd9934c8dd334458b86/cf91397f?ts=1658361235&userId=usrQMwWEPx18KgLcP&cs=92965b66f0d4923b'
-            },
-        ]
+        "stock": 10
     },
     {
         "id": "recotY5Nh00DQFdkm",
@@ -198,8 +164,8 @@ export const products = [
         "shipping": true,
         "images": [
             {
-                "filename": "plant_pot",
-                "url": '/images/plant_pot.jpg'
+                "filename": "dinner_set",
+                "url": '/images/dinner_set.jpg'
             },
             {
                 "filename": "image2",
@@ -217,7 +183,8 @@ export const products = [
                 "filename": "image4",
                 "url": 'https://dl.airtable.com/.attachmentThumbnails/530c07c5ade5acd9934c8dd334458b86/cf91397f?ts=1658361235&userId=usrQMwWEPx18KgLcP&cs=92965b66f0d4923b'
             },
-        ]
+        ],
+        "stock": 2
     },
 
     {
@@ -237,7 +204,7 @@ export const products = [
         "images": [
             {
                 "filename": "plant_pot",
-                "url": '/images/plant_pot.jpg'
+                "url": '/images/candle.jpg'
             },
             {
                 "filename": "image2",
@@ -255,7 +222,8 @@ export const products = [
                 "filename": "image4",
                 "url": 'https://dl.airtable.com/.attachmentThumbnails/530c07c5ade5acd9934c8dd334458b86/cf91397f?ts=1658361235&userId=usrQMwWEPx18KgLcP&cs=92965b66f0d4923b'
             },
-        ]
+        ],
+        "Stock": 15
     }
 
 ]

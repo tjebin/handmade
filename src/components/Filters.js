@@ -84,7 +84,6 @@ const Filters = () => {
                 {color === c ? <FaCheck /> : null}
               </button>
             })}
-
           </div>
         </div>
         <div className="form-control">
@@ -92,18 +91,22 @@ const Filters = () => {
           <div className="price">
             <p className="price">{formatPrice(price)}</p>
             <input type="range" id="price" name="price"
-              min={min_price} max={max_price} value={price} step="5" />
+              onChange={updateFilters}
+              min={min_price}
+              max={max_price}
+              value={price}
+              step="5" />
           </div>
         </div>
-        <div className="form-control">
-          <div className="shipping">
-            Free Shipping <FaCheck />
-          </div>
+        <div className="form-control shipping">
+          <label htmlFor="shipping">free shipping</label>
+          <input type="checkbox" name="shipping" id="shipping"
+            onChange={updateFilters} checked={shipping} />
         </div>
+        <button className='clear-btn' onClick={clearFilters}>{''}Clear Filters</button>
       </form>
-    </div >
-    <button className='clear-btn'>Clear Filters</button>
-  </Wrapper >
+    </div>
+  </Wrapper>
 }
 
 const Wrapper = styled.section`

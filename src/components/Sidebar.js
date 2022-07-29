@@ -84,7 +84,7 @@ const SidebarContainer = styled.div`
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 60vh;
     background: var(--clr-white);
     transition: var(--transition);
     transform: translate(-100%);
@@ -95,6 +95,7 @@ const SidebarContainer = styled.div`
     transform: translate(0);
     z-index: 999;
     display: visible;
+    overflow-y:scroll;
   }
   @media screen and (min-width: 992px) {
     .sidebar {

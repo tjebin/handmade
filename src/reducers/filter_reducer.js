@@ -94,12 +94,75 @@ const filter_reducer = (state, action) => {
         }
     }
 
-    if (action.type === FILTER_PRODUCTS) {
+    if (action.type === CLEAR_FILTERS) {
         return {
-            ...state
+            ...state,
+            filters: {
+                ...state.filters,
+                text: '',
+                company: 'all',
+                category: 'all',
+                color: 'all',
+                price: state.filters.max_price,
+                shipping: false
+            }
         }
     }
 
+    if (action.type === FILTER_PRODUCTS) {
+        const { all_products } = state;
+        const { text, category, company, color, price, shipping } = state.filters;
+        let tempProducts = [...all_products];
+        //filtering
+        if (text) {
+            tempProducts = tempProducts.filter((product) => {
+                return product.name.toLowerCase().startsWith(text);
+            });
+        }
+
+        if (category !== 'all') {
+            tempProducts = tempProducts.filter((product) => {
+                return product.category === category;
+            });
+        }
+
+        if (color !== 'all') {
+            tempProducts = tempProducts.filter((product) => {
+                const { colors } = product;
+                const filteredColors = colors.filter((c) => {
+                    return c === color;
+                })
+                if (filteredColors.length !== 0) {
+                    return product;
+                }
+            });
+        }
+
+        if (company !== 'all') {
+            tempProducts = tempProducts.filter((product) => {
+                return product.company === company;
+            });
+        }
+
+        if (shipping) {
+            tempProducts = tempProducts.filter((product) => {
+                return product.shipping === true;
+            });
+        }
+
+        if (price) {
+            tempProducts = tempProducts.filter((product) => {
+                return product.price <= price;
+            });
+        }
+
+
+
+        return {
+            ...state,
+            filtered_products: tempProducts
+        }
+    }
 
     return state
     throw new Error(`No Matching "${action.type}" - action type`)
