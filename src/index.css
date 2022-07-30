@@ -82,7 +82,7 @@ a {
   text-align: center;
 }
 .title .underline {
-  width: 6rem;
+  width: 7rem;
   height: 0.25rem;
   background: var(--clr-primary-5);
   margin: 0 auto;

@@ -4,29 +4,30 @@ import { useProductsContext } from '../context/products_context'
 import Product from '../components/Product'
 
 const FeaturedProducts = () => {
-    const data = useProductsContext();
-    const { products } = data;
+  const data = useProductsContext();
+  const { products } = data;
 
-    const featuredProducts = products.filter((product) => {
-        return product.featured;
-    });
-    return (
-        <Wrapper className="section">
-            <div className="title">
-                <h1>Featured Products</h1>
-                <div className='underline'></div>
-            </div>
-            <div className="section-center featured">
-                {featuredProducts.slice(0, 3).map((product) => {
-                    return <Product key={product.id} {...product} />
-                })}
-            </div>
-        </Wrapper >
-    )
+  const featuredProducts = products.filter((product) => {
+    return product.featured;
+  });
+  return (
+    <Wrapper className="section">
+      <div className="title">
+        <h1>Featured Products</h1>
+        <div className='underline'></div>
+      </div>
+      <div className="section-center featured">
+        {featuredProducts.slice(0, 3).map((product) => {
+          return <Product key={product.id} {...product} />
+        })}
+      </div>
+    </Wrapper >
+  )
 }
 
 const Wrapper = styled.section`
   background: var(--clr-grey-10);
+  margin-top:6rem;
   .featured {
     margin: 4rem auto;
     display: grid;

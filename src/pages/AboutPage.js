@@ -4,26 +4,26 @@ import BreadCrumb from '../components/Breadcrumb'
 import aboutImg from '../assets/images/light.jpg'
 
 const AboutPage = () => {
-    return (
-        <main>
-            <BreadCrumb title='About' />
-            <Wrapper className="page section section-center">
-                <img src={aboutImg} alt="About" />
-                <article>
-                    <div className="title">
-                        <h2>About Us</h2>
-                        <div className='underline'></div>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Necessitatibus,
-                        provident! Natus tempore harum possimus
-                        itaque molestias, quasi minima vero error,
-                        magni aliquam qui sunt architecto minus voluptatem,
-                        commodi quis optio.</p>
-                </article>
-            </Wrapper>
-        </main>
-    )
+  return (
+    <main>
+      <BreadCrumb title='About' />
+      <Wrapper className="page section section-center">
+        <img src={aboutImg} alt="About" />
+        <article>
+          <div className="title">
+            <h2>About Us</h2>
+            <div className='underline'></div>
+          </div>
+          <p>Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Necessitatibus,
+            provident! Natus tempore harum possimus
+            itaque molestias, quasi minima vero error,
+            magni aliquam qui sunt architecto minus voluptatem,
+            commodi quis optio.</p>
+        </article>
+      </Wrapper>
+    </main>
+  )
 }
 
 const Wrapper = styled.section`
@@ -48,6 +48,7 @@ const Wrapper = styled.section`
   }
   .underline {
     margin-left: 0;
+    background: var(--clr-grey-1);
   }
   @media (min-width: 992px) {
     grid-template-columns: 1fr 1fr;

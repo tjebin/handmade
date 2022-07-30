@@ -5,23 +5,23 @@ import bamboo_tray from '../assets/images/bamboo_tray.jpg'
 import { Link } from 'react-router-dom'
 
 const Design = () => {
-    return (
-        <Wrapper className="section-center">
-            <article className="content">
-                <h1>Handmade Colllections</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Cumque, corporis. Exercitationem, veritatis
-                    sint quam soluta atque doloribus iusto dignissimos
-                    quaerat culpa at tempore repellendus asperiores deserunt
-                    molestiae pariatur nihil hic?</p>
-                <Link to="/products" className="btn shop-btn">Shop Now</Link>
-            </article>
-            <article className="img-container">
-                <img src={bedding_set} alt="Main Img" className='main-img' />
-                <img src={bamboo_tray} alt="Main Img" className='accent-img' />
-            </article>
-        </Wrapper>
-    )
+  return (
+    <Wrapper className="section-center">
+      <article className="content">
+        <h1>Handmade Colllections</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Cumque, corporis. Exercitationem, veritatis
+          sint quam soluta atque doloribus iusto dignissimos
+          quaerat culpa at tempore repellendus asperiores deserunt
+          molestiae pariatur nihil hic?</p>
+        <Link to="/products" className="btn shop-btn">Shop Now</Link>
+      </article>
+      <article className="img-container">
+        <img src={bedding_set} alt="Main Img" className='main-img' />
+        <img src={bamboo_tray} alt="Main Img" className='accent-img' />
+      </article>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.section`
@@ -52,15 +52,15 @@ const Wrapper = styled.section`
     .shop-btn {
       padding: 0.75rem 1.5rem;
       font-size: 1rem;
+      background: var(--clr-grey-5);
     }
     .img-container {
       display: block;
       position: relative;
-      border : 1px solid red;
     }
     .main-img {
       width: 100%;
-      height: 550px;
+      height: inherit;
       position: relative;
       border-radius: var(--radius);
       display: block;
@@ -78,9 +78,9 @@ const Wrapper = styled.section`
       content: '';
       position: absolute;
       width: 10%;
-      height: 80%;
+      height: 90%;
       background: var(--clr-primary-9);
-      bottom: 0%;
+      top: 0%;
       left: -8%;
       border-radius: var(--radius);
     }

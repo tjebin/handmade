@@ -17,7 +17,7 @@ const Breadcrumb = ({ title, product }) => {
 }
 
 const Wrapper = styled.section`
-  background: var(--clr-primary-10);
+  background: var(--clr-grey-6);
   width: 100%;
   min-height: 20vh;
   display: flex;
