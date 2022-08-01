@@ -17,6 +17,7 @@ import Filters from './Filters';
 import CartContent from './CarContent';
 import CartTotals from './CartTotals';
 import CartItem from './CartItem';
+import StripeCheckout from './StripeCheckout';
 
 export {
     Navbar,
@@ -37,7 +38,7 @@ export {
     Filters,
     CartContent,
     CartTotals,
-    CartItem
-
+    CartItem,
+    StripeCheckout
 }
 

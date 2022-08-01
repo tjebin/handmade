@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useProductsContext } from '../context/products_context'
 import Product from '../components/Product'
-
+import { Link } from 'react-router-dom';
 const FeaturedProducts = () => {
   const data = useProductsContext();
   const { products } = data;
@@ -21,6 +21,7 @@ const FeaturedProducts = () => {
           return <Product key={product.id} {...product} />
         })}
       </div>
+      <Link to="/products" className="btn">all products</Link>
     </Wrapper >
   )
 }

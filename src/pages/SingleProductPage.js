@@ -27,6 +27,7 @@ const SingleProductPage = () => {
   const { name, price, description, stock, stars, reviews, id: sku, company, images } = singleProduct;
   useEffect(() => {
     getSingleProduct(id);
+    // eslint-disable-next-line
   }, [id]);
   return <Wrapper>
     <Breadcrumb title="Single Product" product="product"></Breadcrumb>

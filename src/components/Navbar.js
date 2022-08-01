@@ -6,10 +6,12 @@ import { FaBars } from 'react-icons/fa';
 import { links } from '../utils/constants';
 import CartButtons from './CartButtons';
 import { useProductsContext } from '../context/products_context'
+import { useUserContext } from '../context/user_context';
 
 const Navbar = () => {
   const data = useProductsContext();
   const { setOpenSidebar } = data;
+  const { myUser } = useUserContext();
 
   return (
     <NavContainer>
@@ -27,6 +29,12 @@ const Navbar = () => {
               <Link to={url}>{text}</Link>
             </li>
           })}
+
+          {
+            myUser && <li>
+              <Link to="/checkout">checkout</Link>
+            </li>
+          }
         </ul>
         <div className="cart-btn-wrapper">
           <CartButtons />

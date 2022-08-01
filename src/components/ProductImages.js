@@ -1,20 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const ProductImages = ({ images = [{ url: '' }] }) => {
   const [main, setMain] = useState({});
-  useEffect(() => {
-    setMain({ ...images[0] })
-  }, [])
+
+  const changeMainImage = (imageObj) => {
+    setMain(imageObj);
+  }
 
   return <Wrapper>
-    <img src={main.url ? main.url : images[0].url} className="main" alt="" />
+    <img src={main.url ? main.url : images[0].url} className="main" alt="main" />
     <div className="gallery">
       {images.map((image, index) => {
         return <img src={image.url} alt={image.filename}
           key={index}
           className={`${image.url === main.url ? 'active' : null}`}
-          onClick={() => setMain(images[index])} />
+          onClick={() => changeMainImage(images[index])} />
       })}
     </div>
   </Wrapper>
